@@ -1,9 +1,9 @@
 {
-  "posts": [
+  "register": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "_id":"24aefbbb-8def-4e2c-b19a-929ff55020c0",
+      "username":"player1",
+      "password":"password"
     }
   ],
   "comments": [
