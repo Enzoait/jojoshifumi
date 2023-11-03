@@ -6,12 +6,11 @@
       "password":"password"
     }
   ],
-  "comments": [
+  "login": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+      "username":"monpseudo",
+      "password":"mypassword"
+      }
   ],
   "profile": {
     "name": "typicode"
