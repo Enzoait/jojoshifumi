@@ -21,7 +21,4 @@ npm run dev
 
 # To-Do
 
-- Connecter le back-end pour mettre en place le système de connexion
-- Faire la page de jeu
-- Faire le css
-- Faire une page d'accueil
+- Regarder dans UserListContext.jsx si il est possible de faire se connecter un utilisateur avec un fichier actions/users-fetch.jsx

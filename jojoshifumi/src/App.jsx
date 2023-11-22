@@ -8,11 +8,20 @@ import GamePage from './Pages/GamePage';
 function App() {
   //const [count, setCount] = useState(0)
 
+  const addUser =
+    useContext(TaskListContext);
+    useEffect(() => {
+    console.log("Tasks changed");
+    return () => {
+      console.log("Tasks will change");
+    };
+  }, [tasks]);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage onSubmit={addUser}/>} />
         <Route path="/game" element={<GamePage />} />
       </Routes>
     </Router>
