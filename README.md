@@ -6,7 +6,7 @@ Un jeu de Shifumi fait en React.
 Lancer le serveur :
 
 ```shell
-cd chifoumi-server
+cd chifoumi-server-main
 cd functions
 docker compose up
 ```
