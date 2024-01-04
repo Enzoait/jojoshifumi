@@ -8,6 +8,7 @@ export default function LoginPage() {
     const { dispatch, setUser } = useUser();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loginFailed, setLoginFailed] = useState(false);
 
     const redirection = useNavigate();
   
@@ -21,6 +22,7 @@ export default function LoginPage() {
         redirection('/matchlist');
       } catch (error) {
         console.error('Login error:', error);
+        setLoginFailed(true);
       }
     };
 
@@ -28,7 +30,7 @@ export default function LoginPage() {
     <form className="form-login" onSubmit={handleLogin}>
       <input
         type="text"
-        placeholder="Identifiant"
+        placeholder="Nom d'utilisateur"
         className="input-field"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -43,7 +45,14 @@ export default function LoginPage() {
       <button className="connexion-button" type="submit">
         Se connecter
       </button>
-      <p>Vous n'avez pas de compte ? <a href="/register">Créer son compte</a></p>
+      {loginFailed ? 
+        <div>
+          <p className="error-message">Nom d'utilisateur ou mot de passe incorrect</p>
+          <p>Vous n'avez pas de compte ? <a href="/register">Créer son compte</a></p> 
+        </div>  
+        : 
+        <p>Vous n'avez pas de compte ? <a href="/register">Créer son compte</a></p>
+      }
     </form>
   );
 }
