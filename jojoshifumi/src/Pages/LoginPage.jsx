@@ -17,7 +17,6 @@ export default function LoginPage() {
   
       try {
         const token = await loginUser(username, password);
-        saveTokenToLocalStorage(token);
         setUser(dispatch, { username, token });
         redirection('/matchlist');
       } catch (error) {
@@ -46,8 +45,8 @@ export default function LoginPage() {
         Se connecter
       </button>
       {loginFailed ? 
-        <div>
-          <p className="error-message">Nom d'utilisateur ou mot de passe incorrect</p>
+        <div className="error-message"> 
+          <p>Nom d'utilisateur ou mot de passe incorrect</p>
           <p>Vous n'avez pas de compte ? <a href="/register">Créer son compte</a></p> 
         </div>  
         : 

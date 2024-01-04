@@ -12,6 +12,7 @@ export const loginUser = async (username, password) => {
   
       if (response.ok) {
         const data = await response.json();
+        saveTokenAndUsernameToLocalStorage(data.token, username);
         return data.token;
       } else {
         throw new Error('Login failed');
@@ -43,4 +44,9 @@ export const registerUser = async (username, password) => {
       console.error('Error:', error);
       throw error;
     }
+};
+
+const saveTokenAndUsernameToLocalStorage = (token, username) => {
+  localStorage.setItem('userToken', token);
+  localStorage.setItem('username', username);
 };

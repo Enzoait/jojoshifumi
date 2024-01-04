@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect} from 'react';
+import { getUserFromLocalStorage } from './Actions/user-localstorage';
 
 // Contexte
 const UserContext = createContext();
@@ -6,6 +7,11 @@ const UserContext = createContext();
 // Composant Contexte Provider 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = getUserFromLocalStorage();
+    setUser(storedUser);
+  }, []);
 
   const setUserContext = (userData) => {
     setUser(userData);
