@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
 import LoginPage from './Pages/LoginPage.jsx'
+import RegisterPage from './Pages/RegisterPage.jsx'
 import HomePage from './Pages/HomePage';
 import GamePage from './Pages/GamePage';
 import { UserProvider } from './Contexts/UserContext.jsx';
@@ -15,10 +16,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/login"
-            element={<LoginPage/>}
-          />
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/register" element={<RegisterPage/>}/>
           <Route path="/game" element={<GamePage />} />
         </Routes>
       </Router>

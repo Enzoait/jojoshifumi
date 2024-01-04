@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import { useUser } from '../Contexts/UserContext';
-import { loginUser } from '../Contexts/Actions/user-fetch';
+import { registerUser } from '../Contexts/Actions/user-fetch';
 import { saveTokenToLocalStorage, getTokenFromLocalStorage } from '../Contexts/Actions/user-localstorage';
 
-export default function LoginPage() {
+export default function RegisterPage() {
     const { dispatch, setUser } = useUser();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
   
-    const handleLogin = async (e) => {
+    const handleRegister = async (e) => {
       e.preventDefault();
   
       try {
-        const token = await loginUser(username, password);
+        const token = await registerUser(username, password);
         saveTokenToLocalStorage(token);
         setUser(dispatch, { username, token });
       } catch (error) {
-        console.error('Login error:', error);
+        console.error('Register error:', error);
       }
     };
 
   return (
-    <form className="form-login" onSubmit={handleLogin}>
+    <form className="form-login" onSubmit={handleRegister}>
       <input
         type="text"
         placeholder="Identifiant"
@@ -37,9 +37,9 @@ export default function LoginPage() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button className="connexion-button" type="submit">
-        Se connecter
+        S'inscrire
       </button>
-      <p>Vous n'avez pas de compte ? <a href="/register">Créer son compte</a></p>
+      <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
     </form>
   );
 }
