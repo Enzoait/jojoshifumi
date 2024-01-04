@@ -7,6 +7,7 @@ export default function RegisterPage() {
     const { dispatch, setUser } = useUser();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [success, setSuccess] = useState(false);
   
     const handleRegister = async (e) => {
       e.preventDefault();
@@ -15,6 +16,7 @@ export default function RegisterPage() {
         const token = await registerUser(username, password);
         saveTokenToLocalStorage(token);
         setUser(dispatch, { username, token });
+        setSuccess(true);
       } catch (error) {
         console.error('Register error:', error);
       }
@@ -39,7 +41,13 @@ export default function RegisterPage() {
       <button className="connexion-button" type="submit">
         S'inscrire
       </button>
-      <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
+      {success ? 
+        <div className='success-message'>
+          <p >Inscription reussie, vous pouvez à présent vous <a href="/login">connecter</a></p>
+        </div>
+        : 
+        <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
+      }
     </form>
   );
 }

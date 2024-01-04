@@ -5,6 +5,7 @@ import LoginPage from './Pages/LoginPage.jsx'
 import RegisterPage from './Pages/RegisterPage.jsx'
 import HomePage from './Pages/HomePage';
 import GamePage from './Pages/GamePage';
+import MatchListPage from './Pages/MatchListPage';
 import { UserProvider } from './Contexts/UserContext.jsx';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/register" element={<RegisterPage/>}/>
+          <Route path="/matchlist" element={<MatchListPage/>}/>
           <Route path="/game" element={<GamePage />} />
         </Routes>
       </Router>
