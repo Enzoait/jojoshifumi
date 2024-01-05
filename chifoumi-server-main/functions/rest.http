@@ -1,17 +1,17 @@
-POST http://localhost:3002/register
+POST http://fauques.freeboxos.fr:3000/register
 Content-Type: application/json
 
 {
-  "username": "test2",
-  "password": "test3"
+  "username": "test13",
+  "password": "password13"
 }
 ###
-POST http://localhost:3002/login
+POST http://fauques.freeboxos.fr:3000/login
 Content-Type: application/json
 
 {
   "username": "test2",
-  "password": "test3"
+  "password": "password2"
 }
 
 # username: test, token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyNGFlZmJiYi04ZGVmLTRlMmMtYjE5YS05MjlmZjU1MDIwYzAiLCJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE2MzczMjEwODUsImV4cCI6MTY2ODg3ODY4NX0.mE6rJgcC3HSi-vDyzjsyP1XKYv_SK9BL_NAZ66MOWzQ
@@ -19,7 +19,7 @@ Content-Type: application/json
 # username: test3, token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjZjQ0NzM1NC0zZjViLTRmOWYtOGNiZC04NjFlODA5NTIwYTIiLCJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjY5MDgxMjI3LCJleHAiOjE3MDA2Mzg4Mjd9.E1RNT88N-yrZPRl4H8OfbMJ6jySjERj2Luq990Lq7q8
 
 ### GET Matches
-GET http://localhost:3002/matches
+GET http://fauques.freeboxos.fr:3000/matches
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjZjQ0NzM1NC0zZjViLTRmOWYtOGNiZC04NjFlODA5NTIwYTIiLCJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjY5MDgxMjI3LCJleHAiOjE3MDA2Mzg4Mjd9.E1RNT88N-yrZPRl4H8OfbMJ6jySjERj2Luq990Lq7q8
 
 ### GET Match test2
