@@ -1,0 +1,90 @@
+.main-content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 125px;
+    gap: 20px;
+}
+
+.title-and-description{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.main-button{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(162, 162, 239);
+    padding: 20px 70px; 
+    border-radius: 20px;
+    border: none;
+    margin: 50px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s;
+}
+
+.main-button:hover{
+    background-color: rgb(211, 211, 244);
+    padding: 20px 140px;
+    color: rgb(19, 19, 25);
+    transition: all 0.3s;
+}
+
+.link-button-play{
+    color: white;
+    transition: all 0.3s
+}
+
+.link-button-play:hover{
+    color: rgb(19, 19, 25);
+    transition: all 0.3s;
+}
+
+.title{
+    font-size: 100px;
+    color: rgb(162, 162, 239);
+    font-weight: 700;
+    margin: 0;
+}
+
+.description{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.regles{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 200px 50px 200px;
+    background-color: rgb(19, 19, 25);
+}
+
+.regles-text{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.regles-alignement{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.logo-chifoumi img{
+    width: 300px;
+    height: 190px;
+}
+
+.title-regle{
+    font-size: 20px;
+    font-weight: 700;
+}
+

@@ -32,8 +32,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjZjQ0NzM1N
 
 
 ### POST MATCH test3
-POST http://localhost:3002/matches
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJjZjQ0NzM1NC0zZjViLTRmOWYtOGNiZC04NjFlODA5NTIwYTIiLCJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjY5MDgxMjI3LCJleHAiOjE3MDA2Mzg4Mjd9.E1RNT88N-yrZPRl4H8OfbMJ6jySjERj2Luq990Lq7q8
+POST http://fauques.freeboxos.fr:3000/matches
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhODdlZTFlYy1kYzJmLTQzMjYtOTE3Mi00ZDMwMzg5N2NhZDUiLCJ1c2VybmFtZSI6InRlc3QxMCIsImlhdCI6MTcwNDU0NzczOCwiZXhwIjoxNzM2MTA1MzM4fQ.m2UyEsaVv82S5e_syQlZOw5v-szrYBIUhao8q4CzW68
 
 ### POST MATCH test2
 POST http://localhost:3002/matches

@@ -20,6 +20,7 @@ const MatchListProvider = ({ children }) => {
   };
 
   const editMatch = (match, newValue) => {
+    
     return matchsActions.edit(match, newValue).then((data) =>
       setMatches(
         matches.map((m) => {

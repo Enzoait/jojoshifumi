@@ -8,7 +8,7 @@ import MatchList from './MatchListComponents/MatchList';
 
 export default function MatchListPage() {
     const { user } = useUser();
-    const { matches, addMatch} = useContext(MatchListContext); 
+    const { matches, addMatch, fetchMatches} = useContext(MatchListContext); 
   
     const [creatingMatch, setCreatingMatch] = useState(false);
 
@@ -16,14 +16,7 @@ export default function MatchListPage() {
   
     const handleCreateMatch = async () => {
       try {
-        const newMatch = await addMatch({
-          user1: {
-            username: getUsernameFromLocalStorage(),
-          },
-          user2: null,
-          turns: [],
-          _id : IdMatch,
-        });
+        const newMatch = await addMatch();
         console.log("Match créé avec succès:", newMatch);
         setCreatingMatch(true);
       } catch (error) {
@@ -33,9 +26,10 @@ export default function MatchListPage() {
 
     useEffect(() => {
         if (creatingMatch) {
-            setCreatingMatch(false);
+          setCreatingMatch(false);
+          fetchMatches();
         }
-      }, [creatingMatch, matches]);
+      }, [creatingMatch]);
   
     return (
       <>
@@ -45,7 +39,6 @@ export default function MatchListPage() {
           <a href="/login">Déconnexion</a>
         </div>
         <div>
-          <h2>Liste des matchs :</h2>
           <button onClick={handleCreateMatch} disabled={creatingMatch}>
             Créer un match
           </button>
@@ -56,27 +49,3 @@ export default function MatchListPage() {
       </>
     );
   }
-
-
-/*import React from 'react';
-import { useUser } from '../Contexts/UserContext';
-import { getUsernameFromLocalStorage } from '../Contexts/Actions/user-localstorage';
-import MatchListProvider from '../Contexts/MatchContext';
-
-export default function MatchListPage() {
-    const { user } = useUser();
-    const username = user?.username || getUsernameFromLocalStorage();
-    return<>
-        <div>
-            <p>Connecté en tant que : <strong>{username}</strong></p>
-            <p>Page de liste de matchs</p>
-            <a href="/login">Déconnexion</a>
-        </div>
-        <div>
-            <h2>Liste des matchs :</h2>
-            <MatchListProvider>
-
-            </MatchListProvider>
-        </div>
-    </>;
-};*/

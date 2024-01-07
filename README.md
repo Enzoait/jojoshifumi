@@ -21,4 +21,7 @@ npm run dev
 
 # To-Do
 
-- Regarder dans UserListContext.jsx si il est possible de faire se connecter un utilisateur avec un fichier actions/users-fetch.jsx
+- Ajouter le header et le footer sur toutes les pages
+- Faire le front de la page de login, register, matchlist et des matchs
+- Faire le système de jeu
+- Faire le about (optionel)

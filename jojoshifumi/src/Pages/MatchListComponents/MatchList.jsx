@@ -10,12 +10,12 @@ const MatchList = () => {
   const { matches, fetchMatches } = useContext(MatchListContext);
 
   useEffect(() => {
-    // Mettez à jour la liste des matches chaque fois que le composant est monté
+    // Mettre à jour la liste des matches chaque fois que le composant est render
     fetchMatches();
   }, []);
 
   const handleMatchClick = (matchId) => {
-    // Naviguer vers la page du match avec l'ID du match
+    // Naviguer vers la page du match avec l'ID du match (va servir pour plus tard)
     navigate(`/matches/${matchId}`);
   };
 
