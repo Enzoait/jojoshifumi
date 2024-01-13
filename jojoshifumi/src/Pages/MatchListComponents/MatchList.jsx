@@ -2,8 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../Contexts/UserContext';
 import { MatchListContext } from '../../Contexts/MatchContext';
+import './Style/MatchList.css';
 
-const MatchList = () => {
+export default function MatchList(){
   const { user } = useUser();
   const navigate = useNavigate();
 
@@ -19,17 +20,17 @@ const MatchList = () => {
   };
 
   return (
-    <div>
-      <h3>Liste des matchs :</h3>
-      <ul>
+    <div className='match-list-container'>
+      <h1>Liste des matchs :</h1>
         {matches.map((match) => (
-          <li key={match._id} onClick={() => handleMatchClick(match._id)}>
-            Match ID: {match._id}, Joueur 1: {match.user1.username}, Joueur 2: {match.user2?.username || 'En attente'}
-          </li>
+          <div key={match._id} onClick={() => handleMatchClick(match._id)} className='match-box'>
+            <p>Match ID: {match._id}</p>
+            <p>Joueur 1: {match.user1.username}</p>
+            <p>Joueur 2: {match.user2?.username || 'En attente'}</p>
+          </div>
         ))}
-      </ul>
     </div>
   );
 };
 
-export default MatchList;
+
