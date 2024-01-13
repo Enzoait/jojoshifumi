@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { useUser } from '../Contexts/UserContext';
 import { registerUser } from '../Contexts/Actions/user-fetch';
 import { saveTokenToLocalStorage, getTokenFromLocalStorage } from '../Contexts/Actions/user-localstorage';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import './Style/LoginPage.css';
+import user from '../assets/user.svg'
 
 export default function RegisterPage() {
     const { dispatch, setUser } = useUser();
@@ -22,11 +26,16 @@ export default function RegisterPage() {
       }
     };
 
-  return (
+  return <>
+  <Header/>
+  <div className='form-content'>
     <form className="form-login" onSubmit={handleRegister}>
+
+      <div className='login-password'>
+      <img src={user} alt="user" className='key-image'/>
       <input
         type="text"
-        placeholder="Identifiant"
+        placeholder="Nom d'utilisateur"
         className="input-field"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -38,16 +47,21 @@ export default function RegisterPage() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="connexion-button" type="submit">
-        S'inscrire
-      </button>
-      {success ? 
-        <div className='success-message'>
-          <p >Inscription reussie, vous pouvez à présent vous <a href="/login">connecter</a></p>
-        </div>
-        : 
-        <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
-      }
+      </div>
+      <div className='button-links'>
+        <button className="connexion-button" type="submit">
+          S'inscrire
+        </button>
+        {success ? 
+          <div className='success-message'>
+            <p >Inscription reussie, vous pouvez à présent vous <a href="/login">connecter</a></p>
+          </div>
+          : 
+          <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
+        }
+      </div>
     </form>
-  );
+    </div>
+    <Footer/>
+  </>;
 }

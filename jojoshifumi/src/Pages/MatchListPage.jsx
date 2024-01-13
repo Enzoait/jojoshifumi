@@ -4,6 +4,9 @@ import { useUser } from '../Contexts/UserContext';
 import { getUsernameFromLocalStorage } from '../Contexts/Actions/user-localstorage';
 import MatchListProvider,{ MatchListContext } from '../Contexts/MatchContext';
 import MatchList from './MatchListComponents/MatchList';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import './Style/MatchListPage.css';
 
 
 export default function MatchListPage() {
@@ -31,20 +34,25 @@ export default function MatchListPage() {
   
     return (
       <>
-        <div>
+      <Header/>
+      <div className='main-list'>
+        <div className='main-content-list'>
           <p>Connecté en tant que : <strong>{user?.username}</strong></p>
-          <p>Page de liste de matchs</p>
           <a href="/login">Déconnexion</a>
         </div>
-        <div>
-          <button onClick={handleCreateMatch} disabled={creatingMatch}>
-            Créer un match
+        <div className='button-match-creation'>
+          <button onClick={handleCreateMatch} disabled={creatingMatch} className='connexion-button'>
+              Créer un match
           </button>
-          <p>Nb : Vous devez recharger la page pour voir le match créé.</p>
+        </div>
+        <div className='list-main'>
+          <p>Nb : Vous devez recharger la page pour voir le match créé. Il est impossible de créer un match si il y'a déjà un match en attente.</p>
           <MatchListProvider>
             <MatchList/>
           </MatchListProvider>
         </div>
+      </div>
+      <Footer/>
       </>
     );
   }
