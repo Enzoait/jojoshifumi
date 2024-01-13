@@ -1,0 +1,27 @@
+.match-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(19, 19, 25);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.match-box{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(162, 162, 239);
+    padding: 20px;
+    border-radius: 15px;
+    width: 500px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.match-box:hover{
+    background-color: rgb(162, 162, 239);
+    color: rgb(19, 19, 25);
+    transition: all 0.3s;
+}
