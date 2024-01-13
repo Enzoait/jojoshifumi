@@ -23,7 +23,7 @@ function App() {
               <Route path="/login" element={<LoginPage/>}/>
               <Route path="/register" element={<RegisterPage/>}/>
               <Route path="/matchlist" element={<MatchListPage/>}/>
-              <Route path="/game" element={<GamePage />} />
+              <Route path="/matches/:matchId" element={<GamePage />} />
             </Routes>
           </Router>
         </MatchListProvider>

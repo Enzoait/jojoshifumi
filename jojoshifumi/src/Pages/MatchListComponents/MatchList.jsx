@@ -15,8 +15,7 @@ const MatchList = () => {
   }, []);
 
   const handleMatchClick = (matchId) => {
-    // Naviguer vers la page du match avec l'ID du match (va servir pour plus tard)
-    navigate(`/matches/${matchId}`);
+    window.open(`/matches/${matchId}`, '_blank');//navigate(`/matches/${matchId}`);
   };
 
   return (
