@@ -1,0 +1,23 @@
+.main-list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main-content-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 125px;
+    align-items: center;
+}
+
+.list-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-match-creation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

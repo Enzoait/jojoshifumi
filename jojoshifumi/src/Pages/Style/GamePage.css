@@ -1,0 +1,38 @@
+.main-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-game-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin-top: 115px;
+    border: 1px solid rgb(162, 162, 239);
+    background-color: rgb(19, 19, 25);
+    padding: 20px 20px 40px 20px;
+    border-radius: 15px;
+    color: white;
+    gap: 20px;
+}
+
+.match-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.leave-game-link{
+    color: white;
+    transition: all 0.3s;
+}
+
+.leave-game-link:hover{
+    color: rgb(19, 19, 25);
+    transition: all 0.3s;
+}
+
+.movement{
+    cursor: pointer;
+}
