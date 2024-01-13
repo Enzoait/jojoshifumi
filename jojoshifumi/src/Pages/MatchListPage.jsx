@@ -11,8 +11,6 @@ export default function MatchListPage() {
     const { matches, addMatch, fetchMatches} = useContext(MatchListContext); 
   
     const [creatingMatch, setCreatingMatch] = useState(false);
-
-    const IdMatch = uuidv4();
   
     const handleCreateMatch = async () => {
       try {
@@ -42,6 +40,7 @@ export default function MatchListPage() {
           <button onClick={handleCreateMatch} disabled={creatingMatch}>
             Créer un match
           </button>
+          <p>Nb : Vous devez recharger la page pour voir le match créé.</p>
           <MatchListProvider>
             <MatchList/>
           </MatchListProvider>
